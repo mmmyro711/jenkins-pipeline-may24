@@ -18,12 +18,12 @@ pipeline {
         }
         stage ('stage4'){
             steps {
-                sh 'sudo systemctl status jenkins'
+                sh 'systemctl status jenkins'
             }
         }
         stage ('stage5'){
             steps {
-                sh 'sudo apt update -y'
+                sh 'apt update -y'
             }
         }
     }
