@@ -16,5 +16,15 @@ pipeline {
                 sh 'curl ifconfig.me'
             }
         }
+        stage ('stage4'){
+            steps {
+                sh 'sudo systemctl status jenkins'
+            }
+        }
+        stage ('stage5'){
+            steps {
+                sh 'sudo apt update -y'
+            }
+        }
     }
 }
