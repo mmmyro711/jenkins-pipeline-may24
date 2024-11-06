@@ -1,31 +1,28 @@
-pipeline {
-    agent any
-    stages{
-        stage('terraform-init'){
+pipeline{
+    agent any 
+    stages {
+        stage('init'){
             steps{
-                sh 'terraform init'
+                dir('infra'){
+                    sh 'terraform init'
+                    sh 'terraform validate'
+                    sh 'terraform fmt'
+                }             
             }
         }
-        stage('terraform-validate'){
+        stage('plan'){    
             steps{
-                sh 'terraform validate'
-            }
-        }
-        stage('fmt'){
-            steps {
-                sh 'terraform fmt'
-            }
-        }
-        stage('plan'){
-            steps{
-                sh 'terraform plan'
+                dir('infra'){
+                    sh 'terraform plan'
+                } 
             }
         }
         stage('apply'){
             steps{
-                sh 'terraform apply --auto-approve'
-            }
+                 dir('infra'){
+                    sh 'terraform apply --auto-approve'
+                }  
+            }  
         }
-        
     }
 }
