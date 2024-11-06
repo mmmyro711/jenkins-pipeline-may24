@@ -25,4 +25,12 @@ pipeline{
             }  
         }
     }
+    post {
+        success {
+            echo 'infrasctuctore deployed successfully'
+        }
+        failer {
+            echo 'infrascructure deployment failed'
+        }
+    }
 }
