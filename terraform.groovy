@@ -29,7 +29,7 @@ pipeline{
         success {
             echo 'infrasctuctore deployed successfully'
         }
-        failer {
+        failed {
             echo 'infrascructure deployment failed'
         }
     }
