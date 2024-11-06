@@ -27,10 +27,10 @@ pipeline{
     }
     post {
         success {
-            echo 'infrasctuctore deployed successfully'
+            echo 'This will run if the pipeline succeeds.'
         }
-        failed {
-            echo 'infrascructure deployment failed'
+        failure {
+            echo 'This will run if the pipeline fails.'
         }
     }
 }
