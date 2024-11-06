@@ -20,7 +20,7 @@ pipeline{
         stage('apply'){
             steps{
                  dir('infra'){
-                    sh 'terraform apply --auto-approve'
+                    sh 'terraform destroy --auto-approve'
                 }  
             }  
         }
