@@ -11,5 +11,10 @@ pipeline {
                 sh 'touch test.txt'
             }
         }
+        stage('TestTerraform'){
+            steps {
+                sh 'terraform -v'
+            }
+        }
     }
 }
