@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Echo Environment Variables') {
+        stage('Deploy') {
             steps {
-                echo "Current build number: ${env.BUILD_NUMBER}"
-                echo "The name of the job is: ${env.JOB_NAME}"
-                echo "The workspace path is: ${env.WORKSPACE}"
+                echo "build number: ${env.BUILD_NUMBER}"
+                echo "name of the job: ${env.JOB_NAME}"
+                echo "the workspace: ${env.WORKSPACE}"
             }
         }
     }
