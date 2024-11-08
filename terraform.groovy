@@ -48,5 +48,8 @@ pipeline{
         failure {
             echo 'This will run if the pipeline fails.'
         }
+        cleanup {
+            cleanWs()
+        }
     }
 }
