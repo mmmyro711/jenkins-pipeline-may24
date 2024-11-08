@@ -12,7 +12,9 @@ pipeline {
             }
         }
         stage('Test'){
-            echo "This is ${env.Var2}"
+            steps{
+                echo "This is ${env.Var2}"
+            }
         }
     }
 }
