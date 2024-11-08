@@ -7,7 +7,7 @@ pipeline {
     }
     parameters {
         string(name: 'USER', description: 'Who is running Jenkins pipeline?', defaultValue: '' )
-        booleanParam(name: 'isProd', description: 'If prod environment:', defaultValue: true)
+        booleanParam(name: 'isProd', description: 'If prod environment:', defaultValue: false)
 
     }
     stages {

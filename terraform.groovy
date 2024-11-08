@@ -1,6 +1,11 @@
 pipeline{
     agent any 
     stages {
+
+    parameters {
+        choice(name: 'TF_ACTION', choices: ['apply', 'destroy'], description: 'select the action')
+
+    }    
         stage('init'){
             steps{
                 dir('infra'){
@@ -17,10 +22,12 @@ pipeline{
                 } 
             }
         }
+{
+ 
         stage('apply'){
             steps{
                  dir('infra'){
-                    sh 'terraform destroy --auto-approve'
+                    sh "terraform ${env.TF_ACTION} --auto-approve"
                 }  
             }  
         }
