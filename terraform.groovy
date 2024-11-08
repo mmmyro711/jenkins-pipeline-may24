@@ -9,7 +9,7 @@ pipeline{
         stage('init'){
             steps{
                 dir('infra'){
-                    sh 'terraform init'
+                    sh 'terraform init -migrate-state'
                     sh 'terraform validate'
                     sh 'terraform fmt'
                 }             
