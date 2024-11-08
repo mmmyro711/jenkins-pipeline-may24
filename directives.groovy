@@ -5,6 +5,9 @@ pipeline {
         Var2 = "testing"
         Var3 = "success"
     }
+    parameters {
+        string(name: 'USER', description: 'Who is running Jenkins pipeline?', defaultValue: 'myro' )
+    }
     stages {
         stage('build') {
             steps {
@@ -14,6 +17,7 @@ pipeline {
         stage('Test'){
             steps{
                 echo "This is ${env.Var2}"
+                echo "${params.USER} is running the job"
             }
         }
         stage('Deploy') {
