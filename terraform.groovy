@@ -29,7 +29,7 @@ pipeline{
         }
         stage('apply'){
             steps{
-                input message: 'Do you want to approve the deployment?', ok: 'Yes, please' 
+                // input message: 'Do you want to approve the deployment?', ok: 'Yes, please' 
                 dir('infra'){
                     sh "terraform ${params.TF_ACTION} --auto-approve"
                 }  
