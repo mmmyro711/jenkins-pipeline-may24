@@ -16,5 +16,14 @@ pipeline {
                 echo "This is ${env.Var2}"
             }
         }
+        stage('Echo BUILD_NUMBER') {
+            steps {
+                echo "Current build number: ${env.BUILD_NUMBER}"
+            }
+        }
+        stage('Echo JOB_NAME') {
+            steps {
+                echo "Current build number: ${env.JOB_NAME}"
+            }    
     }
 }
