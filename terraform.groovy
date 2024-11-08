@@ -3,7 +3,10 @@ pipeline{
     
     parameters {
     choice(name: 'TF_ACTION', choices: ['apply', 'destroy'], description: 'select the action')
-    } 
+    }
+    options { 
+      buildDiscarder(logRotator(numToKeepStr: '3'))
+    }    
     stages {
    
         stage('init'){
