@@ -33,7 +33,12 @@ pipeline{
                 dir('infra'){
                     sh "terraform ${params.TF_ACTION} --auto-approve"
                 }  
-            }  
+            } 
+            post {
+                success {
+                    echo " Terraform APPLY / DESTROY finished"
+                }
+            } 
         }
     }
     post {
