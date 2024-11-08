@@ -7,6 +7,8 @@ pipeline {
     }
     parameters {
         string(name: 'USER', description: 'Who is running Jenkins pipeline?', defaultValue: '' )
+        booleanParam(name: 'Are you from prod environment?', description: 'If prod environment:', defaultValue: false)
+
     }
     stages {
         stage('build') {
@@ -29,6 +31,7 @@ pipeline {
                 echo "job url: $job_url"
                 echo "job url: $JOB_URL"
                 echo "job url: ${BUILD_ID}"
+                echo "Is this Prod environment? : ${params.isProd}"
 
 
             }
