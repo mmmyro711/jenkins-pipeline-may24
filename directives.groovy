@@ -25,5 +25,6 @@ pipeline {
             steps {
                 echo "Current build number: ${env.JOB_NAME}"
             }    
+        }
     }
 }
