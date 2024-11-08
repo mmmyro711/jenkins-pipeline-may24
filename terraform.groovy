@@ -1,11 +1,11 @@
 pipeline{
     agent any 
-    stages {
-
+    
     parameters {
-        choice(name: 'TF_ACTION', choices: ['apply', 'destroy'], description: 'select the action')
-
-    }    
+    choice(name: 'TF_ACTION', choices: ['apply', 'destroy'], description: 'select the action')
+    } 
+    stages {
+   
         stage('init'){
             steps{
                 dir('infra'){
