@@ -6,7 +6,7 @@ pipeline {
         Var3 = "success"
     }
     parameters {
-        string(name: 'USER', description: 'Who is running Jenkins pipeline?', defaultValue: 'myro' )
+        string(name: 'USER', description: 'Who is running Jenkins pipeline?', defaultValue: '' )
     }
     stages {
         stage('build') {
