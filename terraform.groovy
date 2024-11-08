@@ -6,7 +6,7 @@ pipeline{
     }
     options { 
       buildDiscarder(logRotator(numToKeepStr: '3'))
-    //   timeout(time: 40, unit: 'SECONDS')
+      timeout(time: 1, unit: 'MINUTES')
     }
       
     stages {
@@ -29,7 +29,7 @@ pipeline{
         }
         stage('apply'){
             steps{
-                input message: 'Do you want to approve the deployment?', ok: 'Yes'
+                // input message: 'Do you want to approve the deployment?', ok: 'Yes' 
                 dir('infra'){
                     sh "terraform ${params.TF_ACTION} --auto-approve"
                 }  
