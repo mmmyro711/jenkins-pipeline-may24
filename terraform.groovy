@@ -27,7 +27,7 @@ pipeline{
         stage('apply'){
             steps{
                  dir('infra'){
-                    sh "terraform ${env.TF_ACTION} --auto-approve"
+                    sh "terraform ${params.TF_ACTION} --auto-approve"
                 }  
             }  
         }
