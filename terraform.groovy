@@ -22,8 +22,13 @@ pipeline{
                 } 
             }
         }
-{
- 
+        stage('choice') {
+            steps {
+                script {
+                    echo "action selected: ${params.TF_ACTION}"
+                }
+            }
+        }
         stage('apply'){
             steps{
                  dir('infra'){
@@ -39,6 +44,5 @@ pipeline{
         failure {
             echo 'This will run if the pipeline fails.'
         }
-    }
     }
 }
