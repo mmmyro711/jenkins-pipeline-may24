@@ -21,7 +21,7 @@ pipeline {
                 echo "build number: ${env.BUILD_NUMBER}"
                 echo "name of the job: ${env.JOB_NAME}"
                 echo "the workspace: ${env.WORKSPACE}"
-                echo "the build tag: ${end.JOB_NAME} and ${env.BUILD_NUMBER}"
+                echo "the build tag: ${env.JOB_NAME}-${env.BUILD_NUMBER}"
                 echo "job url: $job_url"
                 echo "job url: $JOB_URL"
                 echo "job url: ${BUILD_ID}"
